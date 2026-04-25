@@ -1,0 +1,27 @@
+if (document.body.classList.contains("page-id-274")) {
+	console.log("実績カードを編集します！");
+    const nav_button_elements = document.getElementsByClassName("nav-button")
+    for (const nav_button_element of nav_button_elements) {
+        const link = nav_button_element.querySelector(".link").textContent;
+        const button_img_src = nav_button_element.querySelector(".button_img_src").textContent;
+        const button_img_alt = nav_button_element.querySelector(".button_img_alt").textContent;
+        const title = nav_button_element.querySelector(".title").textContent;
+        const caption = nav_button_element.querySelector(".caption").textContent;
+
+
+        nav_button_element.innerHTML = `
+        <a href="${link}">
+            <div class="non-hover">
+                <!-- 画像サイズ：235*150px -->
+                <img src="${button_img_src}"
+                    alt="${button_img_alt}">
+                <h3>${title}</h3>
+                <p>${caption}</p>
+            </div>
+            <img class="plus-icon" src="https://shikao-web.net/www/wp-content/uploads/2025/07/Plus_Icon.svg" alt="Plus">
+        </a>
+    `;
+    }
+}
+
+
