@@ -7,7 +7,29 @@ export default function HomePage() {
       <section className="page-hero">
         <div className="container">
           <h2>About</h2>
-          <p>技術に触って「楽しい」「面白い」を感じる過程を、作品と記録として発信しています。</p>
+
+
+          <p>情報系の大学生として新年度を迎えた今、まさに大きなスタートラインにいると感じています。</p>
+          <p>これから、コンピュータサイエンス、Web技術などの幅広いソフトウェア技術をより深く学修し、より大きく実践できる人材に成長したいです。</p>
+
+
+          <ul>
+            <li>技術ブログでの知識のアウトプット</li>
+            <li>YouTubeでのプレゼンテーション</li>
+            <li>エンジニアイベントへの参加</li>
+            <li>インターンシップ</li>
+            <li>地域貢献活動</li>
+            <li>大規模アプリケーションの個人開発・デプロイ</li>
+            <li>生成AIの積極的な活用</li>
+          </ul>
+
+          <p>
+            これらの活動を通して、将来は社会に対してより大きな価値を届けることができる人材になりたいです。
+          </p>
+
+          <p>
+            よろしくお願いします。
+          </p>
         </div>
       </section>
 
@@ -29,6 +51,12 @@ export default function HomePage() {
           <p style={{ marginTop: 20 }}>
             <Link href="/news">ニュース一覧を見る →</Link>
           </p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Contact</h2>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEOqKvaCPFEPQSpZPiAxtIuj4-oAlSZHf0zpkTwsViMusnOA/viewform?embedded=true" width="640" height="250" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
         </div>
       </section>
     </>
