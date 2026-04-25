@@ -6,7 +6,7 @@ export default function HomePage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <h1>こんにちは、SHIKAOです。</h1>
+          <h2>About</h2>
           <p>技術に触って「楽しい」「面白い」を感じる過程を、作品と記録として発信しています。</p>
         </div>
       </section>
