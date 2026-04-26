@@ -110,9 +110,17 @@ a {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
   gap: 18px;
 }
+
+@media (max-width: 720px) {
+  .grid{
+    grid-template-columns: repeat(1, minmax(240px, 1fr));
+  }
+}
+
+
 
 .card {
   height: 100%;
@@ -120,6 +128,12 @@ a {
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
+}
+
+@media (max-width: 720px) {
+  .card{
+    width: 240px;;
+  }
 }
 
 .card img {
