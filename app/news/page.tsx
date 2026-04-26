@@ -1,4 +1,4 @@
-import { newsItems } from '@/components/site-data';
+import { newsItems } from '@/components/layout/site-data';
 
 export default function NewsPage() {
   return (

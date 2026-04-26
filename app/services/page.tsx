@@ -1,4 +1,4 @@
-import { serviceCards } from '@/components/site-data';
+import { serviceCards } from '@/components/layout/site-data';
 
 export default function ServicesPage() {
   return (
