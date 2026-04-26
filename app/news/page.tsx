@@ -1,5 +1,5 @@
 import { client } from '@/libs/microcms'
-import { newsItems } from '@/components/layout/site-data';
+import Link from 'next/link';
 
 
 export default async function NewsPage() {
@@ -24,12 +24,12 @@ export default async function NewsPage() {
       <section className="section">
         <div className="container news-list">
           {data.contents.map((post: any) => (
-            <a href={"/news/" + post.id} className="news-item">
+            <Link key={post.id} href={`/news/${post.id}`} className="news-item">
               <article key={post.title}>
                 <p className="card__meta">{post.date.split("T")[0]}</p>
                 <h3>{post.title}</h3>
               </article>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

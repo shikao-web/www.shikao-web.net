@@ -1,4 +1,3 @@
-import { serviceCards } from '@/components/layout/site-data';
 import { client } from '@/libs/microcms';
 
 export default async function ServicesPage() {
@@ -31,7 +30,7 @@ export default async function ServicesPage() {
             <h2>{category}</h2>
             <div className="grid">
               {posts.map((post: any) => (
-                <a href={post.link_url} className="card">
+                <a  key={post.id} href={post.link_url} className="card">
                   <article key={post.title} >
                     <img src={post.thumbnail.url} alt={post.title} className="w-1/2 h-auto" />
                     <div className="card__body">

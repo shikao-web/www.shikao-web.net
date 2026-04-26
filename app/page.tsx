@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { newsItems } from '@/components/layout/site-data';
 import { client } from '@/libs/microcms'
 
 
@@ -52,7 +51,7 @@ export default async function HomePage() {
           <h2>Pick Up News</h2>
           <div className="grid">
             {news_data.contents.map((post: any) => (
-              <a href={"/news/" + post.id} className="card" >
+              <Link  key={post.id} href={`/news/${post.id}`} className="card" >
                 < article key={post.title}>
                   {
                     post.thumbnail ? (
@@ -66,7 +65,7 @@ export default async function HomePage() {
                     <h3 className="card__title">{post.title}</h3>
                   </div>
                 </article>
-              </a>
+              </Link>
             ))}
           </div>
           <p style={{ marginTop: 20 }}>
@@ -77,7 +76,7 @@ export default async function HomePage() {
       <section className="section">
         <div className="container">
           <h2>Contact</h2>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEOqKvaCPFEPQSpZPiAxtIuj4-oAlSZHf0zpkTwsViMusnOA/viewform?embedded=true" width="640" height="250" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEOqKvaCPFEPQSpZPiAxtIuj4-oAlSZHf0zpkTwsViMusnOA/viewform?embedded=true" width={640} height={250}  style={{ border: 0 }}>読み込んでいます…</iframe>
         </div>
       </section>
     </>
