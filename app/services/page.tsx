@@ -1,6 +1,21 @@
 import { serviceCards } from '@/components/layout/site-data';
+import { client } from '@/libs/microcms';
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+
+  const services_data = await client.get({
+    endpoint: "services",
+  });
+
+  const services_grouped = services_data.contents.reduce((acc: any, post: any) => {
+    const category = post.category || "uncategorized";
+
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(post);
+
+    return acc;
+  }, {});
+
   return (
     <>
       <section className="page-hero">
@@ -10,19 +25,26 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container grid">
-          {serviceCards.map((service) => (
-            <article key={service.title} className="card">
-              <img src={service.image} alt={service.title} />
-              <div className="card__body">
-                <h2 className="card__title">{service.title}</h2>
-                <p className="card__text">{service.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      {Object.entries(services_grouped).map(([category, posts]: any) => (
+        <section key={category}>
+          <div className="container">
+            <h2>{category}</h2>
+            <div className="grid">
+              {posts.map((post: any) => (
+                <a href={post.link_url} className="card">
+                  <article key={post.title} >
+                    <img src={post.thumbnail.url} alt={post.title} className="w-1/2 h-auto" />
+                    <div className="card__body">
+                      <h3 className="card__title">{post.title}</h3>
+                      <p className="card__text">{post.description}</p>
+                    </div>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
     </>
   );
 }

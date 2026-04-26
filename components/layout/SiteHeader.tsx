@@ -6,7 +6,7 @@ export default function SiteHeader({ currentPath }: { currentPath: string }) {
     <header className="site-header">
       <div className="container site-header__inner">
         <Link href="/" className="brand" aria-label="SHIKAO-WEB Home">
-          <img src="/index_files/TitleLogo-1.png" alt="SHIKAO-WEB" />
+          <img src="/img/TitleLogo-1.png" alt="SHIKAO-WEB" />
         </Link>
 
         <nav className="main-nav" aria-label="メインナビゲーション">
