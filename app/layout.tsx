@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: 'SHIKAO-WEB official site'
 };
 
+export const dynamic = "force-dynamic";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
