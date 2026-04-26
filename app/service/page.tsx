@@ -20,7 +20,7 @@ export default async function ServicesPage() {
       <section className="page-hero">
         <div className="container">
           <h1>活動内容紹介</h1>
-          <p>制作・実験・発信の3つの軸で取り組んでいる活動を紹介します。</p>
+          <p>これまでの活動・実績を紹介します。</p>
         </div>
       </section>
 

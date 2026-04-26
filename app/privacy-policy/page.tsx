@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
       <section className="section">
         <div className="container" style={{ lineHeight: 1.9 }}>
           <h2>1. このサイトについて</h2>
-          <p>このサイトアドレスは <a href="https://shikao-web.net">https://shikao-web.net</a>です。</p>
+          <p>このサイトアドレスは <a href="https://www.shikao-web.net">https://www.shikao-web.net</a>です。</p>
 
           <h2>2. このサイトが収集する個人データと収集の理由</h2>
           <p>当サイトでは、以下の目的でお問い合わせフォームにて個人情報を収集します。</p>
