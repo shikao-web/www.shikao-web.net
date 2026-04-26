@@ -1,7 +1,21 @@
 import Link from 'next/link';
 import { newsItems } from '@/components/layout/site-data';
+import { client } from '@/libs/microcms'
 
-export default function HomePage() {
+
+export default async function HomePage() {
+
+  const news_data = await client.get({
+    endpoint: "news",
+    queries: {
+      orders: "-date",
+      limit: 4
+    },
+
+
+  });
+
+
   return (
     <>
       <section className="page-hero">
@@ -37,22 +51,29 @@ export default function HomePage() {
         <div className="container">
           <h2>Pick Up News</h2>
           <div className="grid">
-            {newsItems.slice(0, 4).map((item) => (
-              <article key={item.title} className="card">
-                <img src="/index_files/SHIKAO-150x150.jpg" alt="news thumbnail" />
-                <div className="card__body">
-                  <p className="card__meta">{item.date}</p>
-                  <h3 className="card__title">{item.title}</h3>
-                  <p className="card__text">{item.excerpt}</p>
-                </div>
-              </article>
+            {news_data.contents.map((post: any) => (
+              <a href={"/news/" + post.id} className="card" >
+                < article key={post.title}>
+                  {
+                    post.thumbnail ? (
+                      <img src={post.thumbnail.url} alt={post.title} />
+                    ) : (
+                      <img src="/index_files/SHIKAO-150x150.jpg" alt="news thumbnail" />
+                    )
+                  }
+                  <div className="card__body">
+                    <p className="card__meta">{post.date.split("T")[0]}</p>
+                    <h3 className="card__title">{post.title}</h3>
+                  </div>
+                </article>
+              </a>
             ))}
           </div>
           <p style={{ marginTop: 20 }}>
             <Link href="/news">ニュース一覧を見る →</Link>
           </p>
         </div>
-      </section>
+      </section >
       <section className="section">
         <div className="container">
           <h2>Contact</h2>

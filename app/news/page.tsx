@@ -1,6 +1,17 @@
+import { client } from '@/libs/microcms'
 import { newsItems } from '@/components/layout/site-data';
 
-export default function NewsPage() {
+
+export default async function NewsPage() {
+  const data = await client.get({
+    endpoint: "news",
+    queries: {
+      orders: "-date"
+    },
+
+    
+  });
+
   return (
     <>
       <section className="page-hero">
@@ -12,12 +23,13 @@ export default function NewsPage() {
 
       <section className="section">
         <div className="container news-list">
-          {newsItems.map((item) => (
-            <article key={item.title} className="news-item">
-              <p className="card__meta">{item.date}</p>
-              <h3>{item.title}</h3>
-              <p>{item.excerpt}</p>
-            </article>
+          {data.contents.map((post: any) => (
+            <a href={"/news/" + post.id} className="news-item">
+              <article key={post.title}>
+                <p className="card__meta">{post.date.split("T")[0]}</p>
+                <h3>{post.title}</h3>
+              </article>
+            </a>
           ))}
         </div>
       </section>

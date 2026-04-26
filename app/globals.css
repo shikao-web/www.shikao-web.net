@@ -116,6 +116,7 @@ a {
 }
 
 .card {
+  height: 100%;
   border: 1px solid #e8ebf5;
   border-radius: 12px;
   overflow: hidden;
