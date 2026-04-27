@@ -76,7 +76,7 @@ export default async function HomePage() {
       <section className="section">
         <div className="container">
           <h2>Contact</h2>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEOqKvaCPFEPQSpZPiAxtIuj4-oAlSZHf0zpkTwsViMusnOA/viewform?embedded=true" width={640} height={250}  style={{ border: 0 }}>読み込んでいます…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEOqKvaCPFEPQSpZPiAxtIuj4-oAlSZHf0zpkTwsViMusnOA/viewform?embedded=true" width="70%" height="300px"  style={{ border: 0 }}>読み込んでいます…</iframe>
         </div>
       </section>
     </>
