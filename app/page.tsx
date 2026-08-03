@@ -57,7 +57,7 @@ export default async function HomePage() {
                     post.thumbnail ? (
                       <img src={post.thumbnail.url} alt={post.title} />
                     ) : (
-                      <img src="/img/SHIKAO-150x150.jpg" alt="news thumbnail" />
+                      <img src="/img/SHIKAO-150x150.png" alt="news thumbnail" />
                     )
                   }
                   <div className="card__body">
