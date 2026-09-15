@@ -6,14 +6,27 @@ export default async function ServicesPage() {
     endpoint: "services",
   });
 
-  const services_grouped = services_data.contents.reduce((acc: any, post: any) => {
-    const category = post.category || "uncategorized";
+  const services_grouped = services_data.contents.reduce(
+    (acc: Record<string, any[]>, post: any) => {
+      const categories: string[] = Array.isArray(post.category)
+        ? post.category
+        : post.category
+        ? [post.category]
+        : ["uncategorized"];
 
-    if (!acc[category]) acc[category] = [];
-    acc[category].push(post);
+      const uniqueCategories = Array.from(
+        new Set(categories.length > 0 ? categories : ["uncategorized"])
+      );
 
-    return acc;
-  }, {});
+      uniqueCategories.forEach((category) => {
+        if (!acc[category]) acc[category] = [];
+        acc[category].push(post);
+      });
+
+      return acc;
+    },
+    {}
+  );
 
   return (
     <>
