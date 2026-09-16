@@ -4,7 +4,10 @@ import SiteChrome from '@/components/layout/SiteChrome';
 
 export const metadata: Metadata = {
   title: 'SHIKAO-WEB',
-  description: 'SHIKAO-WEB official site'
+  description: 'SHIKAO-WEB official site',
+  icons: {
+    icon: "/favicon.ico?v=2",
+  },
 };
 
 export const dynamic = "force-dynamic";
